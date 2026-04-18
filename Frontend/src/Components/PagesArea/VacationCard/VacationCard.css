@@ -1,0 +1,85 @@
+.VacationCard {
+    width: 320px;
+    background-color: var(--color-card);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform var(--transition), box-shadow var(--transition);
+    display: flex;
+    flex-direction: column;
+}
+
+.VacationCard:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.VacationCard img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.vacation-details {
+    padding: 18px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.vacation-details h3 {
+    margin: 0 0 8px 0;
+    color: var(--color-primary);
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.vacation-details p {
+    margin: 4px 0;
+    color: var(--color-text-light);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.vacation-details hr {
+    border: none;
+    border-top: 1px solid var(--color-border);
+    margin: 12px 0;
+}
+
+.likes-area {
+    margin-top: auto;
+    padding-top: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.likes-area button {
+    padding: 8px 16px;
+    background-color: transparent;
+    border: 1.5px solid var(--color-danger);
+    border-radius: 50px;
+    color: var(--color-danger);
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all var(--transition);
+}
+
+.likes-area button:hover {
+    background-color: var(--color-danger);
+    color: white;
+}
+
+.likes-area span {
+    color: var(--color-text-light);
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+@media (max-width: 400px) {
+    .VacationCard {
+        width: 100%;
+    }
+}

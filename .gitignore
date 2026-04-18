@@ -1,0 +1,45 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+*.tsbuildinfo
+
+# Environment / secrets
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Vite / tool caches
+.vite/
+*.local
+
+# Uploaded vacation images (UUID-named) — whitelist seed images below
+Backend/src/1-assets/images/*
+!Backend/src/1-assets/images/bali.jpg
+!Backend/src/1-assets/images/barcelona.jpg
+!Backend/src/1-assets/images/dubai.jpg
+!Backend/src/1-assets/images/london.jpg
+!Backend/src/1-assets/images/newyork.jpg
+!Backend/src/1-assets/images/paris.jpg
+!Backend/src/1-assets/images/phuket.jpg
+!Backend/src/1-assets/images/reykjavik.jpg
+!Backend/src/1-assets/images/rome.jpg
+!Backend/src/1-assets/images/santorini.jpg
+!Backend/src/1-assets/images/sydney.jpg
+!Backend/src/1-assets/images/tokyo.jpg

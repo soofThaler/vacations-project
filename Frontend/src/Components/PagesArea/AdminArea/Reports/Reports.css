@@ -1,0 +1,64 @@
+.Reports {
+    padding: 10px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.reports-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid var(--color-border);
+}
+
+.reports-header h2 {
+    color: var(--color-primary);
+    margin: 0;
+    font-size: 1.6rem;
+}
+
+.csv-btn {
+    background-color: var(--color-success);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: var(--radius-sm);
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color var(--transition), transform 0.1s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.csv-btn:hover {
+    background-color: #2ecc71;
+}
+
+.csv-btn:active {
+    transform: scale(0.97);
+}
+
+.chart-container {
+    height: 500px;
+    background-color: var(--color-card);
+    padding: 24px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+@media (max-width: 600px) {
+    .reports-header {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+    }
+
+    .chart-container {
+        height: 350px;
+        padding: 12px;
+    }
+}

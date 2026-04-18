@@ -1,0 +1,30 @@
+.Layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.Layout header {
+    flex-shrink: 0;
+}
+
+.Layout nav {
+    flex-shrink: 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.Layout main {
+    flex: 1;
+    padding: 30px 20px;
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .Layout main {
+        padding: 20px 12px;
+    }
+}

@@ -1,0 +1,68 @@
+/* ===== CSS Variables / Design Tokens ===== */
+:root {
+    --color-primary: #2c3e50;
+    --color-primary-light: #34495e;
+    --color-accent: #3498db;
+    --color-accent-hover: #2980b9;
+    --color-success: #27ae60;
+    --color-success-hover: #219150;
+    --color-danger: #e74c3c;
+    --color-danger-hover: #c0392b;
+    --color-warning: #f1c40f;
+    --color-bg: #f5f6fa;
+    --color-card: #ffffff;
+    --color-text: #2c3e50;
+    --color-text-light: #636e72;
+    --color-border: #dcdde1;
+    --radius: 10px;
+    --radius-sm: 6px;
+    --radius-lg: 14px;
+    --shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.12);
+    --transition: 0.25s ease;
+}
+
+/* ===== Reset & Base ===== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+    text-align: center;
+}
+
+a {
+    color: var(--color-accent);
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+button {
+    cursor: pointer;
+    font-family: inherit;
+}
+
+input, textarea, select {
+    font-family: inherit;
+}

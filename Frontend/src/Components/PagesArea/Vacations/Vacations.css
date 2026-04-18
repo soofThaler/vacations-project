@@ -1,0 +1,146 @@
+.Vacations {
+    padding: 10px 0;
+}
+
+.Vacations h2 {
+    text-align: center;
+    margin-bottom: 24px;
+    font-size: 2.2rem;
+    color: var(--color-primary);
+    font-weight: 700;
+}
+
+/* AI Assistant button */
+.mcp-open-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 24px;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, var(--color-accent), #2980b9);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    transition: transform var(--transition), box-shadow var(--transition);
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+}
+
+.mcp-open-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+}
+
+.mcp-open-btn:active {
+    transform: translateY(0);
+}
+
+/* Filters */
+.filters-container {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.filters-container label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 18px;
+    background-color: var(--color-card);
+    border: 1.5px solid var(--color-border);
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-text-light);
+    cursor: pointer;
+    transition: all var(--transition);
+    user-select: none;
+}
+
+.filters-container label:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+}
+
+.filters-container input[type="checkbox"] {
+    accent-color: var(--color-accent);
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.filters-container input[type="checkbox"]:checked + span,
+.filters-container label:has(input:checked) {
+    border-color: var(--color-accent);
+    background-color: rgba(52, 152, 219, 0.08);
+    color: var(--color-accent);
+}
+
+/* Vacation grid */
+.vacation-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+}
+
+/* Pagination */
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid var(--color-border);
+}
+
+.pagination-container button {
+    padding: 10px 24px;
+    background-color: var(--color-accent);
+    color: white;
+    border: none;
+    border-radius: var(--radius-sm);
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: background-color var(--transition), transform 0.1s ease;
+}
+
+.pagination-container button:hover:not(:disabled) {
+    background-color: var(--color-accent-hover);
+}
+
+.pagination-container button:active:not(:disabled) {
+    transform: scale(0.97);
+}
+
+.pagination-container button:disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.pagination-container span {
+    font-weight: 600;
+    color: var(--color-text-light);
+    font-size: 0.95rem;
+}
+
+@media (max-width: 600px) {
+    .Vacations h2 {
+        font-size: 1.6rem;
+    }
+
+    .filters-container {
+        gap: 8px;
+    }
+
+    .filters-container label {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+}

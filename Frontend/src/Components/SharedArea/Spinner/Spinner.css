@@ -1,0 +1,24 @@
+.Spinner {
+    display: inline-block;
+}
+
+.Spinner.large {
+    width: 200px;
+    height: 200px;
+}
+
+.Spinner.medium {
+    width: 80px;
+    height: 80px;
+}
+
+.Spinner.small {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+}
+
+.Spinner > img {
+    width: 100%;
+    height: 100%;
+}

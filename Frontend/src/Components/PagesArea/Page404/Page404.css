@@ -1,0 +1,23 @@
+.Page404 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 50vh;
+    padding: 40px 20px;
+}
+
+.Page404::before {
+    content: "404";
+    font-size: 8rem;
+    font-weight: 900;
+    color: var(--color-border);
+    line-height: 1;
+    margin-bottom: 16px;
+}
+
+.Page404 p {
+    font-size: 1.2rem;
+    color: var(--color-text-light);
+    max-width: 400px;
+}

@@ -1,0 +1,103 @@
+.AddVacation {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 35px;
+    background-color: var(--color-card);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+}
+
+.AddVacation h2 {
+    text-align: center;
+    color: var(--color-primary);
+    margin-bottom: 28px;
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.AddVacation form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: left;
+}
+
+.AddVacation label {
+    font-weight: 600;
+    color: var(--color-primary-light);
+    font-size: 0.9rem;
+    margin-top: 4px;
+}
+
+.AddVacation input,
+.AddVacation textarea {
+    padding: 12px 14px;
+    border: 1.5px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    font-size: 1rem;
+    transition: border-color var(--transition), box-shadow var(--transition);
+    outline: none;
+}
+
+.AddVacation input:focus,
+.AddVacation textarea:focus {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.15);
+}
+
+.AddVacation textarea {
+    height: 100px;
+    resize: none;
+}
+
+.AddVacation .error {
+    color: var(--color-danger);
+    font-size: 0.8rem;
+    min-height: 16px;
+}
+
+.AddVacation .buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 18px;
+}
+
+.AddVacation button {
+    flex: 1;
+    padding: 14px;
+    border: none;
+    border-radius: var(--radius-sm);
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color var(--transition), transform 0.1s ease;
+}
+
+.AddVacation button:active {
+    transform: scale(0.97);
+}
+
+.AddVacation button[type="submit"] {
+    background-color: var(--color-success);
+    color: white;
+}
+
+.AddVacation button[type="submit"]:hover {
+    background-color: var(--color-success-hover);
+}
+
+.AddVacation .cancel-btn {
+    background-color: #95a5a6;
+    color: white;
+}
+
+.AddVacation .cancel-btn:hover {
+    background-color: #7f8c8d;
+}
+
+@media (max-width: 480px) {
+    .AddVacation {
+        margin: 20px 16px;
+        padding: 28px 20px;
+    }
+}
