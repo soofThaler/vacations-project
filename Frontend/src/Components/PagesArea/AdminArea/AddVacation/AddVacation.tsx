@@ -45,7 +45,15 @@ export function AddVacation() {
 
                 <label>Start Date:</label>
                 <input type="date" {...register("start_date", {
-                    required: { value: true, message: "Missing start date" }
+                    required: { value: true, message: "Missing start date" },
+                    validate: (value) => {
+                        const today = new Date();
+                        today.setHours(0, 0, 0, 0);
+                        if (new Date(value) < today) {
+                            return "Start date cannot be in the past";
+                        }
+                        return true;
+                    }
                 })} />
                 <span className="error">{formState.errors.start_date?.message}</span>
 

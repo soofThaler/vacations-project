@@ -9,6 +9,7 @@ import { authController } from "./5-controllers/auth-controller";
 import { likesController } from "./5-controllers/likes-controller";
 import { chatController } from "./5-controllers/chat-controller";
 import { errorsMiddleware } from "./6-middleware/errors-middleware";
+import { securityMiddleware } from "./6-middleware/security-middleware";
 import { vacationsMcpServer } from "./4-services/mcp-server";
 
 class App {
@@ -18,6 +19,7 @@ class App {
             server.use(cors());
             server.use(express.json());
             server.use(expressFileUpload());
+            server.use(securityMiddleware.preventXss);
 
             const mcpServer = vacationsMcpServer.createMcpServer();
             const factory = () => mcpServer as any;

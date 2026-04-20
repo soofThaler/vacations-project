@@ -53,7 +53,9 @@ export function VacationCard(props: VacationCardProps) {
                 <p><strong>Price:</strong> ${props.vacation.price}</p>
 
                 <div className="likes-area">
-                    <button onClick={handleLike}>❤️ Like</button>
+                    <button onClick={handleLike} className={isCurrentlyLiked ? "liked" : ""}>
+                        {isCurrentlyLiked ? "❤️ Liked" : "🤍 Like"}
+                    </button>
                     <span> {props.vacation.likes_count || 0} Likes</span>
                 </div>
             </div>

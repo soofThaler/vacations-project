@@ -47,5 +47,14 @@ export class VacationModel {
         if (new Date(this.end_date) < new Date(this.start_date)) {
             return "End date cannot be before start date";
         }
+
+        // Validate start_date is not in the past (only on create, i.e. when vacation_id is not set)
+        if (!this.vacation_id) {
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+            if (new Date(this.start_date) < today) {
+                return "Start date cannot be in the past";
+            }
+        }
     }
 }

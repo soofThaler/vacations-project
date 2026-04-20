@@ -72,6 +72,11 @@
     color: white;
 }
 
+.likes-area button.liked {
+    background-color: var(--color-danger);
+    color: white;
+}
+
 .likes-area span {
     color: var(--color-text-light);
     font-size: 0.85rem;
