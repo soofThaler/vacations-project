@@ -1,0 +1,228 @@
+{
+  "info": {
+    "name": "Vacations API",
+    "description": "Full API collection for the Vacations site backend. Set collection variables `baseUrl`, `token`, and `adminToken` before running requests.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:4000" },
+    { "key": "token", "value": "" },
+    { "key": "adminToken", "value": "" }
+  ],
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Register",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": { "raw": "{{baseUrl}}/api/register", "host": ["{{baseUrl}}"], "path": ["api", "register"] },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"firstName\": \"John\",\n  \"lastName\": \"Doe\",\n  \"email\": \"john@example.com\",\n  \"password\": \"123456\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": { "raw": "{{baseUrl}}/api/login", "host": ["{{baseUrl}}"], "path": ["api", "login"] },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"john@example.com\",\n  \"password\": \"123456\"\n}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Vacations",
+      "item": [
+        {
+          "name": "Get All Vacations",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "url": {
+              "raw": "{{baseUrl}}/api/vacations?page=1&isLiked=false&isActive=false&isUpcoming=false",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "vacations"],
+              "query": [
+                { "key": "page", "value": "1" },
+                { "key": "isLiked", "value": "false" },
+                { "key": "isActive", "value": "false" },
+                { "key": "isUpcoming", "value": "false" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get One Vacation",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "url": { "raw": "{{baseUrl}}/api/vacations/1", "host": ["{{baseUrl}}"], "path": ["api", "vacations", "1"] }
+          }
+        },
+        {
+          "name": "Add Vacation",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }],
+            "url": { "raw": "{{baseUrl}}/api/vacations", "host": ["{{baseUrl}}"], "path": ["api", "vacations"] },
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                { "key": "destination", "value": "Paris", "type": "text" },
+                { "key": "description", "value": "Romantic getaway in the city of lights", "type": "text" },
+                { "key": "start_date", "value": "2026-06-01", "type": "text" },
+                { "key": "end_date", "value": "2026-06-10", "type": "text" },
+                { "key": "price", "value": "1500", "type": "text" },
+                { "key": "image", "type": "file", "src": "" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Update Vacation",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }],
+            "url": { "raw": "{{baseUrl}}/api/vacations/1", "host": ["{{baseUrl}}"], "path": ["api", "vacations", "1"] },
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                { "key": "destination", "value": "Paris", "type": "text" },
+                { "key": "description", "value": "Updated description", "type": "text" },
+                { "key": "start_date", "value": "2026-06-01", "type": "text" },
+                { "key": "end_date", "value": "2026-06-10", "type": "text" },
+                { "key": "price", "value": "1700", "type": "text" },
+                { "key": "image", "type": "file", "src": "" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Delete Vacation",
+          "request": {
+            "method": "DELETE",
+            "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }],
+            "url": { "raw": "{{baseUrl}}/api/vacations/1", "host": ["{{baseUrl}}"], "path": ["api", "vacations", "1"] }
+          }
+        },
+        {
+          "name": "Download CSV Report",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }],
+            "url": {
+              "raw": "{{baseUrl}}/api/vacations/download/csv",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "vacations", "download", "csv"]
+            }
+          }
+        },
+        {
+          "name": "Get Reports Data (JSON)",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }],
+            "url": {
+              "raw": "{{baseUrl}}/api/vacations/reports/data",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "vacations", "reports", "data"]
+            }
+          }
+        },
+        {
+          "name": "Get Vacation Image",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/vacations/images/example.jpg",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "vacations", "images", "example.jpg"]
+            }
+          }
+        },
+        {
+          "name": "Get AI Recommendation",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "url": {
+              "raw": "{{baseUrl}}/api/vacations/ai/recommendation/Paris",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "vacations", "ai", "recommendation", "Paris"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Likes",
+      "item": [
+        {
+          "name": "Add Like",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "url": { "raw": "{{baseUrl}}/api/likes/1", "host": ["{{baseUrl}}"], "path": ["api", "likes", "1"] }
+          }
+        },
+        {
+          "name": "Remove Like",
+          "request": {
+            "method": "DELETE",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "url": { "raw": "{{baseUrl}}/api/likes/1", "host": ["{{baseUrl}}"], "path": ["api", "likes", "1"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Chat",
+      "item": [
+        {
+          "name": "Ask Chat",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": { "raw": "{{baseUrl}}/api/chat", "host": ["{{baseUrl}}"], "path": ["api", "chat"] },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"message\": \"What vacations are available in Europe?\"\n}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "MCP",
+      "item": [
+        {
+          "name": "MCP SSE Stream",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/sse", "host": ["{{baseUrl}}"], "path": ["sse"] },
+            "description": "Server-Sent Events stream used by the MCP transport. Not a standard REST call."
+          }
+        },
+        {
+          "name": "MCP Messages",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": { "raw": "{{baseUrl}}/messages", "host": ["{{baseUrl}}"], "path": ["messages"] },
+            "body": { "mode": "raw", "raw": "{}" },
+            "description": "MCP client->server message endpoint."
+          }
+        }
+      ]
+    }
+  ]
+}

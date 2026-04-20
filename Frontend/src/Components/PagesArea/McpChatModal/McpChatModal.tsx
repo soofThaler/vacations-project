@@ -27,7 +27,7 @@ export function McpChatModal({ isOpen, onClose }: McpChatModalProps) {
                 setMessages((prev) => [...prev, { sender: "AI", text: data }]);
                 setIsLoading(false);
             },
-            (err) => {
+            () => {
                 setIsLoading(false);
             }
         );

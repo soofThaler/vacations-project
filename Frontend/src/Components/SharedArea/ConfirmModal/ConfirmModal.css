@@ -1,0 +1,141 @@
+.ConfirmModal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: confirmFadeIn 0.2s ease;
+}
+
+.ConfirmModal {
+    background-color: var(--color-card);
+    width: 400px;
+    max-width: 90vw;
+    border-radius: var(--radius-lg);
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    animation: confirmSlideUp 0.3s ease;
+}
+
+.ConfirmModal-header {
+    color: white;
+    padding: 16px 20px;
+}
+
+.ConfirmModal-header.danger {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+}
+
+.ConfirmModal-header.warning {
+    background: linear-gradient(135deg, #f39c12, #e67e22);
+}
+
+.ConfirmModal-header.info {
+    background: linear-gradient(135deg, var(--color-accent), var(--color-accent-hover));
+}
+
+.ConfirmModal-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.ConfirmModal-body {
+    padding: 24px 20px;
+    background-color: var(--color-card);
+}
+
+.ConfirmModal-body p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--color-text);
+    line-height: 1.5;
+}
+
+.ConfirmModal-footer {
+    padding: 14px 20px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    border-top: 1px solid var(--color-border);
+    background-color: var(--color-card);
+}
+
+.ConfirmModal-footer button {
+    padding: 9px 20px;
+    border: none;
+    border-radius: var(--radius-sm);
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color var(--transition), transform 0.1s ease;
+}
+
+.ConfirmModal-footer button:active {
+    transform: scale(0.97);
+}
+
+.ConfirmModal-footer .cancel-btn {
+    background-color: #ecf0f1;
+    color: #2c3e50;
+}
+
+.ConfirmModal-footer .cancel-btn:hover {
+    background-color: #d5dbdb;
+}
+
+.ConfirmModal-footer .confirm-btn.danger {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.ConfirmModal-footer .confirm-btn.danger:hover {
+    background-color: #c0392b;
+}
+
+.ConfirmModal-footer .confirm-btn.warning {
+    background-color: #f39c12;
+    color: white;
+}
+
+.ConfirmModal-footer .confirm-btn.warning:hover {
+    background-color: #e67e22;
+}
+
+.ConfirmModal-footer .confirm-btn.info {
+    background-color: var(--color-accent);
+    color: white;
+}
+
+.ConfirmModal-footer .confirm-btn.info:hover {
+    background-color: var(--color-accent-hover);
+}
+
+@keyframes confirmFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes confirmSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 480px) {
+    .ConfirmModal {
+        width: 95vw;
+    }
+}
